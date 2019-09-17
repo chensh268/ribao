@@ -1,0 +1,138 @@
+/* pages/dailyDetail/dailyDetail.wxss */
+.title{
+  display: flex;
+  padding:30rpx 0 20rpx 30rpx;
+}
+.title image{
+  width:120rpx;
+  height:120rpx;
+  border-radius:50%;
+}
+.title .name{
+  padding:10rpx 0 20rpx 30rpx;
+}
+.title .time{
+  font-size:24rpx;
+  color:#ccc;
+  padding-left:30rpx;
+}
+.daily {
+  padding:30rpx 40rpx;
+  border-bottom:2rpx solid #ccc;
+  font-size:28rpx;
+  color:#666;
+}
+.phone-container{
+  display:flex;
+}
+.phone-number{
+  width:174rpx;
+  height:34rpx;
+  line-height:40rpx;
+  border:2rpx solid #ccc;
+}
+.bank{
+  border-bottom:2rpx solid #ccc;
+}
+.bankTitle{
+  color:#9966ff;
+  font-weight: bold;
+  border-bottom:2rpx solid #ccc;
+  height:50rpx;
+  line-height:50rpx;
+}
+
+/* 滑动 */
+
+.scroll-menus {
+  display: flex;
+  /* width: 650rpx; */
+  width:100%;
+  height: auto;
+  line-height: 60rpx;
+  white-space: nowrap;
+  border-bottom: 2px solid #eee;
+
+  
+  
+}
+
+.scroll-menu {
+  /* display: flex; */
+  display:inline-block;
+  width: 160rpx;
+  height: 60rpx;
+  text-align: center;
+  border-right: 2rpx solid #eee;
+  border-bottom: 2rpx solid #eee;
+  box-sizing: border-box;
+}
+.scroll-menu1{
+  font-size:28rpx;
+  /* display: flex; */
+  display:inline-block;
+  width: 100%;
+  height: 60rpx;
+  text-align: center;
+  border-right: 2rpx solid #eee;
+  border-bottom: 2rpx solid #eee;
+  box-sizing: border-box;
+}
+
+.fixed {
+  /* display: inline-block; */
+  font-size: 30rpx;
+  padding-top: 10rpx;
+  width: 120rpx;
+  height: 50rpx;
+  text-align: center;
+  border-right: 2rpx solid #eee;
+  background-color: #fff;
+}
+
+.header {
+  font-size: 30rpx;
+  background-color: #fff;
+}
+
+/* 滑动end */
+
+/* 意向客户 */
+.table-header {
+  width: 100%;
+  height: 60rpx;
+  line-height:60rpx;
+  border-bottom:2rpx solid #eee;
+  /* display:flex; */
+}
+
+.table-header text {
+  display: inline-block;
+  border-right: 2rpx solid #eee;
+  box-sizing: border-box;
+}
+
+.table-body {
+  display: flex;
+  height:60rpx;
+  line-height:60rpx;
+  /* justify-content: space-around; */
+  border-bottom:1rpx solid #eee;
+}
+
+.left {
+  text-align: center;
+  /* border:2rpx solid red; */
+}
+
+.input {
+  border-right: 2rpx solid #eee;
+  width: 120rpx;
+  height: 60rpx;
+  line-height:60rpx;
+  text-align: center;
+  font-size: 28rpx;
+  border-radius: 6rpx;
+  /* border: 2rpx solid #ccc; */
+  box-sizing: border-box;
+}

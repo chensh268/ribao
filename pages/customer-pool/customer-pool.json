@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "客户池",
+  "usingComponents": {
+    "van-search": "../../distVant/search/index"
+  }
+}

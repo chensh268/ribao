@@ -1,0 +1,40 @@
+<!--pages/intentionCustom/intentionCustom.wxml-->
+<!--pages/yixiang/yixiang.wxml-->
+<view class="cus-container">
+  <form bindsubmit="formSubmit" >
+    <view class='table-header'>
+      <text class='left' style="width:100rpx; margin-right:10rpx;">姓名</text>
+      <text class='left' style="width:160rpx; margin-right:10rpx;">手机号</text>
+      <text class='left' style="width:80rpx; margin-right:10rpx;">等级</text>
+      <text class='left' style="width:90rpx; margin-right:10rpx;">额度</text>
+      <text class='left' style="width:280rpx;">备注</text>
+    </view>
+    <view>
+      <label wx:for="{{yixiang}}" class='table-body'>
+        <input type='text' style="width:100rpx; margin-right:10rpx;" name="user_name-{{index}}" id="user_name-{{index}}" class='input' value='{{item.user_name}}' bindinput="value"  />
+        <input type='number' style="width:160rpx; margin-right:10rpx;" name="user_phone-{{index}}" id="user_phone-{{index}}" class='input' value='{{item.user_phone}}' bindinput='value' bindblur="phone"/>
+        <input type='number'style="width:80rpx; margin-right:10rpx;" name="user_level-{{index}}" id="user_level-{{index}}" class='input' value='{{item.user_level}}' bindinput="value" />
+        <input type='digit' style="width:90rpx; margin-right:10rpx;" name="money-{{index}}" id="money-{{index}}" class='input' value='{{item.money}}' bindinput="value" />
+        <input type='text' style="width:280rpx;" name="status_desc-{{index}}" id="status_desc-{{index}}" class='input' value='{{item.status_desc}}' bindinput="value" />
+      </label>
+    </view>
+    <view><text style="color:red">*</text><text>额度单位：万元</text></view>
+    <view class='add-container'>
+      
+      <label class='right' >
+        <button bindtap='tianjia' hidden>添加</button>
+        <view class='tj'>添加</view>
+      </label>
+      <label class='right'>
+        <button bindtap='shanchu' hidden>删除</button>
+        <view class='sc'>删除</view>
+      </label>
+    </view>
+    
+    <label>
+      <button form-type="submit" hidden>保存</button>
+      <view class='button'>保存</view>
+    </label>
+  </form> 
+</view>
+

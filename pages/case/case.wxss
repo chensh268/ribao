@@ -1,0 +1,40 @@
+/* pages/case/case.wxss */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2rpx solid #ccc;
+}
+
+.header text {
+  font-size: 30rpx;
+  color: #666;
+  padding-left: 40rpx;
+}
+
+.case {
+  display: flex;
+  /* justify-content: space-around; */
+  /* font-size:30rpx; */
+  border-bottom:2rpx solid #ccc;
+  padding:20rpx 0;
+  box-sizing: border-box;
+}
+
+.case image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-left:40rpx;
+}
+.case .small{
+  font-size:26rpx;
+  color:#ccc;
+  padding:6rpx 0 26rpx 0;
+}
+.case .text{
+  color:#666;
+  font-size:28rpx;
+  height:72rpx;
+  overflow:auto;
+}

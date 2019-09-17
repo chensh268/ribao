@@ -1,0 +1,15 @@
+<view class="modal1" wx:if="{{modal1}}">
+  <view class="list">日报</view>
+  <view class="list">案例</view>
+</view>
+<view class="modal2" wx:if="{{modal2}}">
+  <view class="list">支用预警</view>
+  <view class="list">支用回访</view>
+  <view class="list">客户池</view>
+</view>
+<view class="tabbar-container">
+  <view class="tab" bindtap="wo">排行榜</view>
+  <view class="tab" bindtap="ni">工作</view>
+  <view class="tab" bindtap="ta">客户舆情</view>
+  <view class="tab" bindtap="ta">我的</view>
+</view>

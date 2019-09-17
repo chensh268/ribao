@@ -1,0 +1,23 @@
+<!--pages/return/return.wxml-->
+<view class="return-container">
+  <van-search value="{{ value }}" placeholder="请输入姓名/手机号" show-action bind:search="onSearch" bind:cancel="onCancel" />
+  <view class="table-header">
+    <view style="width:120rpx;">姓名</view>
+    <view style="width:180rpx;">回访日期</view>
+    <view>申请额度</view>
+    <view>已用额度</view>
+    <view>剩余额度</view>
+  </view>
+  <block wx:for="{{return}}" wx:key="{{item.id}}">
+    <navigator url='../returnDetail/returnDetail?back_id="{{item.back_id}}"'>
+      <view class="table-body">
+        <text style="width:120rpx;">{{item.customer_name}}</text>
+        <text style="width:180rpx;">{{item.back_date}}</text>
+        <text>{{item.customer_limit}}</text>
+        <text>{{item.customer_use}}</text>
+        <text style="width:142rpx;">{{item.customer_surplus}}</text>
+      </view>
+    </navigator>
+  </block>
+
+</view>

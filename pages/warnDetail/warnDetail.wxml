@@ -1,0 +1,25 @@
+<!--pages/warnDetail/warnDetail.wxml-->
+<wxs src="../../utils/type.wxs" module="filters"></wxs>
+<view class="cus-container">
+  <view class="customer" style="border-bottom:2rpx solid #ccc;">回访客户详情</view>
+  <view class="customer-body">
+    <view class="item">
+      <text style="padding-left:10rpx;box-sizing:border-box">姓名</text>
+      <text style="color:#999">{{warn.remind_customer_name}}</text>
+      <text style="width:24%">手机号</text>
+      <text style="color:#999;">{{warn.remind_customer_phone}}</text>
+    </view>
+    <view class="item">
+      <text style="padding-left:10rpx;box-sizing:border-box">提醒时间</text>
+      <text style="color:#999" wx:if="{{warn.remind_time!==null}}">{{filters.sub(warn.remind_time)}}</text>
+      <text style="color:#999" wx:if="{{warn.remind_time==null}}"></text>
+      <text>失效时间</text>
+      <text style="color:#999" wx:if="{{warn.limit_date!==null}}">{{filters.sub(warn.limit_date)}}</text>
+      <text style="color:#999" wx:if="{{warn.limit_date==null}}"></text>
+    </view>
+    <view style="display:flex;border-bottom:2rpx solid #ccc;height:150rpx;line-height:75rpx;">
+      <view style="padding-left:10rpx;box-sizing:border-box;display:inline-block;width:186rpx;">描述</view>
+      <view style="color:#999 width:280rpx;height:150rpx;overflow:auto;">{{warn.remind_desc}}</view>
+    </view>
+  </view>
+</view>

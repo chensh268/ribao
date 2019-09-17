@@ -1,0 +1,33 @@
+<!--pages/myPerformance/myPerformance.wxml-->
+<view class="return-container">
+  <view class="table-header">
+    <view style="width:100rpx;text-align:left">月份</view>
+    <view style="width:135rpx;text-align:left">分期通</view>
+    <view style="width:100rpx;text-align:left">系数</view>
+    <view style="width:170rpx;text-align:left">家装分期</view>
+    <view style="width:100rpx;text-align:left">系数</view>
+    <view style="width:135rpx;text-align:left">支用额</view>
+    <view style="width:100rpx;text-align:left">奖金</view>
+  </view>
+  <view class="total">
+    <text style="width:100rpx">合计</text>
+    <text style="width:110rpx">{{money1}}</text>
+    <text style="width:105rpx">{{performance[0].proportion1}}</text>
+    <text style="width:110rpx">{{money2}}</text>
+    <text style="width:100rpx;text-align:right">{{performance[0].proportion2}}</text>
+    <text style="width:115rpx;text-align:right">{{money3}}</text>
+    <text style="width:100rpx;text-align:right">{{bonus}}</text>
+  </view>
+    <block wx:for="{{performance}}" wx:key="{{item}}">
+      <view class="table-body">
+        <text style="width:100rpx">{{item.date}}</text>
+        <text style="width:110rpx">{{item.money1}}</text>
+        <text style="width:105rpx">{{item.proportion1}}</text>
+        <text style="width:110rpx">{{item.money2}}</text>
+        <text style="width:100rpx;text-align:right">{{item.proportion2}}</text>
+        <text style="width:115rpx;text-align:right">{{item.money3}}</text>
+        <text style="width:100rpx;text-align:right">{{item.bonus}}</text>
+      </view>
+    </block>
+
+</view>

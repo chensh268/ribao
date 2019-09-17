@@ -1,0 +1,66 @@
+/* pages/login/login.wxss */
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-container .topImage {
+  width: 100%;
+  height: 800rpx;
+  margin-bottom: 100rpx;
+}
+
+.button {
+  width: 580rpx;
+  border-radius: 40rpx;
+}
+
+.text {
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+/* .account {
+  display: flex;
+  justify-content: space-between;
+  width: 504rpx;
+  border-bottom: 1rpx solid #ccc;
+  margin-bottom: 40rpx;
+}
+
+.account view {
+  padding-left: 60rpx;
+}
+
+.account input {
+  width: 260rpx;
+} */
+
+/* 改变输入框的pld的样式 */
+
+/* .pla {
+  font-size: 28rpx;
+  color: #ccc;
+} */
+
+/* .login-container .button {
+  display: block;
+  margin: auto;
+  margin-top: 50rpx;
+  width: 300rpx;
+  border-radius: 60rpx;
+  padding: 15rpx;
+  background: #96f;
+  color: #fff;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.light-font {
+  margin-top: 60rpx;
+  font-size: 26rpx;
+  color: #ccc;
+} */

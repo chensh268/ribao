@@ -1,0 +1,42 @@
+/* pages/perDetail/perDetail.wxss */
+
+.return-container {
+  height: 1334rpx;
+  background-color: #f2f2f2;
+}
+
+/* 滑动 */
+
+.scroll-menus {
+  
+  display: flex;
+  height: 60rpx;
+  line-height: 60rpx;
+  white-space: nowrap;
+  border-bottom: 1px solid #eee;
+  /* margin-left: 164rpx; */
+}
+
+.scroll-menu {
+  display: inline-block;
+  width: 160rpx;
+  height: 60rpx;
+  text-align: center;
+  border-right: 2rpx solid #eee;
+  box-sizing: border-box;
+}
+
+.fixed {
+  /* display: inline-block; */
+  padding-top:10rpx;
+  width: 120rpx;
+  height: 50rpx;
+  text-align: center;
+  border-right: 2rpx solid #eee;
+  background-color: #fff;
+}
+
+.header {
+  background-color: #fff;
+}
+/* 滑动end */

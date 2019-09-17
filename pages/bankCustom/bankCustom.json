@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "到行客户详情",
+  "usingComponents": {
+    "van-search": "../../distVant/search/index"
+  }
+}

@@ -1,0 +1,57 @@
+<!--pages/daily/daily.wxml-->
+<view class="daily-container">
+  <van-search value="{{ value }}" placeholder="请输入姓名" show-action bind:search="onSearch" bind:cancel="onCancel" />
+  <view class="header">
+    <text style="font-size:28rpx;">日报列表</text>
+    <i-icon size="26" type="brush" style="padding-right:20rpx" bindtap="writeDaily" />
+  </view>
+
+  <!-- 列表 -->
+  <block wx:for="{{daily}}" wx:key="{{item.work_id}}">
+    <navigator url='../dailyDetail/dailyDetail?work_id="{{item.work_id}}"'>
+      <view class="daily">
+        <!-- <image src="{{item.phone}}"></image> -->
+        <view class="part1">
+          <view style="font-size:30rpx; color:#000; margin-bottom:20rpx;">{{item.user_name}}</view>
+          <!-- <view>
+          <text>银行类别：</text>{{item.bank_name}}</view> -->
+          <view>
+            <text>所属支行：</text>{{item.bank_name}}</view>
+          <view>
+            <text>业务类型：</text>{{item.type_name}}</view>
+          <view>
+            <text>电话数量：</text>{{item.all_number}}</view>
+          <view>
+            <text>到行数量：</text>{{item.arrival_number}}</view>
+          <view>
+            <text>到行金额：</text>{{item.arrival_money}}万</view>
+          <view>
+            <text>审批通过：</text>{{item.deal_number}}</view>
+          <view>
+            <text>审批金额：</text>{{item.deal_money}}万</view>
+          <view>
+            <text>意向客户：</text>{{item.intention_number}}</view>
+          <view>
+            <text>意向金额：</text>{{item.intention_money}}万</view>
+          <view>
+            <text>日报备注：</text>
+            <label wx:if="{{item.work_desc!==null}}" style="width:280rpx;overflow:auto">{{item.work_desc}}</label>
+            <label wx:else></label>
+          </view>
+        </view>
+        <view class="part2">{{item.create_time}}</view>
+      </view>
+    </navigator>
+  </block>
+  <!-- 列表end -->
+  <i-page current="{{ current }}" total="{{total}}"  bind:change="handleChange">
+    <view slot="prev">
+        <i-icon type="return"></i-icon>
+        上一页
+    </view>
+    <view slot="next">
+        下一页
+        <i-icon type="enter"></i-icon>
+    </view>
+</i-page>
+</view>

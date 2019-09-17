@@ -1,0 +1,122 @@
+<!--pages/dailyDetail/dailyDetail.wxml-->
+<wxs src="../../utils/type.wxs" module="filters"></wxs>
+<view>
+  <view class="title">
+    <image src="../../images/login-wx.png"></image>
+    <view>
+      <view class="name">{{daily.user_name}}</view>
+      <view class="time">{{daily.create_time}}</view>
+    </view>
+  </view>
+  <view class="daily">
+    <!-- <view>
+      <text>银行类别：</text>{{daily.bank_name}}</view> -->
+    <view>
+      <text>所属支行：</text>{{daily.bank_name}}</view>
+    <view>
+      <text>业务类型：</text>{{daily.type_name}}</view>
+    <view class="phone-container">
+      <text>电话数量：</text>
+      <input class="phone-number" value="{{daily.all_number}}" bindblur="blur" bindinput="input"></input>
+    </view>
+    <view>
+      <text>到行数量：</text>{{daily.arrival_number}}</view>
+    <view>
+      <text>到行金额：</text>{{daily.arrival_money}}万</view>
+    <view>
+      <text>审批通过：</text>{{daily.deal_number}}</view>
+    <view>
+      <text>审批金额：</text>{{daily.deal_money}}万</view>
+    <view>
+      <text>意向客户：</text>{{daily.intention_number}}</view>
+    <view>
+      <text>意向金额：</text>{{daily.intention_money}}万</view>
+    <view>
+      <text>日报备注：</text>
+      <label wx:if="{{daily.work_desc!==null}}">{{daily.work_desc}}</label>
+      <label wx:else></label>
+    </view>
+  </view>
+  <view class="bank">
+    <view class="bankTitle">到行客户
+      <text wx:if="{{add1}}" style="float:right;margin-right:30rpx;" bindtap="add1">添加</text>
+      <text wx:if="{{!add1}}" style="float:right;margin-right:30rpx;" bindtap="saveAdd1">保存</text>
+    </view>
+    <scroll-view scroll-x="true" class="scroll-menus header" bindscroll="bindscroll" scroll-left="{{scrollLeft}}">
+      <view style="display:inline-block;width:auto;">
+        <view style="display:flex;">
+          <view class="scroll-menu">姓名</view>
+          <view class="scroll-menu">手机号</view>
+          <view class="scroll-menu">等级</view>
+          <view class="scroll-menu">F码</view>
+          <view class="scroll-menu">额度</view>
+          <view class="scroll-menu">分期数</view>
+          <view class="scroll-menu">状态</view>
+          <view class="scroll-menu">通过时间</view>
+          <view class="scroll-menu">失效时间</view>
+          <view class="scroll-menu">备注</view>
+          <view class="scroll-menu">操作</view>
+        </view>
+
+        <view wx:for="{{daohang}}" wx:key="{{item}}" class=' ' style="display:flex; width: 100%;">
+          <input type='text' disabled="{{disabled}}" class="scroll-menu1" value='{{item.user_name}}' id="user_name-{{index}}" bindinput='value'></input>
+          <input type='number' disabled="{{disabled}}" class='scroll-menu1' value='{{item.user_phone}}' id="user_phone-{{index}}" bindinput='value'></input>
+          <input type='number' disabled="{{disabled}}" class='scroll-menu1' value='{{item.user_level}}' id="user_level-{{index}}" bindinput='value' />
+          <input type='text' disabled="{{disabled}}" class='scroll-menu1' value='{{item.f_number}}' id="f_number-{{index}}" bindinput='value' />
+          <input type='digit' disabled="{{disabled}}" class='scroll-menu1' value='{{item.money}}' id="money-{{index}}" bindinput='value'></input>
+          <input type='number' disabled="{{disabled}}" class='scroll-menu1' value='{{item.limit_number}}' id="limit_number-{{index}}" bindinput='value'></input>
+          <picker-view class='scroll-menu1'>
+            <picker placeholder="请选择" range="{{state}}" bindchange="changeState" id="type_status-{{index}}">
+              <input class='scroll-menu1' disabled placeholder="状态" id="type_status-{{index}}" value="{{filters.change(item.type_status)}}"></input>
+            </picker>
+          </picker-view>
+          <picker-view class='scroll-menu1'>
+            <picker mode='date' bindchange="changeTime1" id="time1-{{index}}">
+              <input type="text" class='scroll-menu1' disabled value='{{item.cross_time}}' id="import_time-{{index}}" />
+            </picker>
+          </picker-view>
+          <picker-view class='scroll-menu1'>
+            <picker mode='date' bindchange="changeTime2" id="time2-{{index}}">
+            <input type="text" wx:if='{{item.limit_date == null}}' class='scroll-menu1' disabled value='{{item.limit_date}}' id="import_time-{{index}}" />
+              <input type="text" wx:if='{{item.limit_date!== null}}' class='scroll-menu1' disabled value='{{filters.date(item.limit_date)}}' id="import_time-{{index}}" />
+            </picker>
+          </picker-view>
+          <input type='text'  class='scroll-menu1' value='{{item.status_desc}}' id="status_desc-{{index}}" bindinput='value' />
+          <view class='scroll-menu1'>
+            <text wx:if="{{edit1}}" style="margin-right:10rpx;" bindtap="edit1">修改</text>
+            <text wx:if="{{!edit1}}" style="margin-right:10rpx;" bindtap="save" data-index="{{index}}">保存</text>
+            <text bindtap="delete" data-item="{{item}}" data-index="{{index}}">删除</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="bank">
+    <view class="bankTitle">意向客户
+      <text wx:if="{{add2}}" style="float:right;margin-right:30rpx;" bindtap="add2">添加</text>
+      <text wx:if="{{!add2}}" style="float:right;margin-right:30rpx;" bindtap="saveAdd2">保存</text>
+    </view>
+    <view class='table-header'>
+      <text class='left' style="width:100rpx; margin-right:10rpx;">姓名</text>
+      <text class='left' style="width:160rpx; margin-right:10rpx;">手机号</text>
+      <text class='left' style="width:80rpx; margin-right:10rpx;">等级</text>
+      <text class='left' style="width:90rpx; margin-right:10rpx;">额度</text>
+      <text class='left' style="width:140rpx;">备注</text>
+      <text class='left' style="width:140rpx;">操作</text>
+    </view>
+    <view>
+      <label wx:for="{{yixiang}}" wx:key="{{item}}" class='table-body'>
+        <input type='text' disabled="{{disabled2}}"  style="width:100rpx; margin-right:10rpx;" name="user_name-{{index}}" id="user_name-{{index}}" class='input' value='{{item.user_name}}' bindinput="value2" />
+        <input type='number' disabled="{{disabled2}}" style="width:160rpx; margin-right:10rpx;" name="user_phone-{{index}}" id="user_phone-{{index}}" class='input' value='{{item.user_phone}}' bindinput='value2' />
+        <input type='number' disabled="{{disabled2}}" style="width:80rpx; margin-right:10rpx;" name="user_level-{{index}}" id="user_level-{{index}}" class='input' value='{{item.user_level}}' bindinput="value2" />
+        <input type='digit' disabled="{{disabled2}}" style="width:90rpx; margin-right:10rpx;" name="money-{{index}}" id="money-{{index}}" class='input' value='{{item.money}}' bindinput="value2" />
+        <input type='text'  style="width:140rpx;" name="status_desc-{{index}}" id="status_desc-{{index}}" class='input' value='{{item.status_desc}}' bindinput="value2" />
+        <view class='input' style="width:140rpx;line-height:60rpx;">
+            <text wx:if="{{edit2}}" style="margin-right:10rpx;" bindtap="edit2">修改</text>
+            <text wx:if="{{!edit2}}" style="margin-right:10rpx;" bindtap="save2" data-index="{{index}}">保存</text>
+            <text  data-item="{{item}}" data-index="{{index}}" bindtap="delete2">删除</text>
+          </view>
+      </label>
+    </view>
+  </view>
+</view>

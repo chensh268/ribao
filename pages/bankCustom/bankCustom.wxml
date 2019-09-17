@@ -1,0 +1,114 @@
+<!--pages/bankCustom/bankCustom.wxml-->
+<wxs src="../../utils/type.wxs" module="filters"></wxs>
+<!-- 意向客户页面 -->
+<view hidden='{{hide}}'>
+  <view class='ss'>
+    <van-search value="{{ value }}" placeholder="意向客户姓名/意向客户手机号" show-action bind:search="onSearch" bind:cancel="onCancel" />
+  </view>
+  <view class='yxlb'>
+    <text>意向客户列表</text>
+    <view class="table-header">
+      <text>姓名</text>
+      <text>手机号</text>
+      <text>意向额度</text>
+      <text>状态</text>
+    </view>
+    <block wx:for="{{yxkh}}">
+      <view class='table-body'>
+        <text>{{item.user_name}}</text>
+        <text>{{item.user_phone}}</text>
+        <text>{{item.money}}万</text>
+        <picker placeholder="请选择" range="{{state}}" bindchange="changeState2" id="type_status-{{index}}">
+          <input class='scroll-menu1' style="width:170rpx;" disabled placeholder="状态" id="type_status-{{index}}" value="{{filters.change(item.type_status)}}"></input>
+        </picker>
+      </view>
+    </block>
+    <view id='fixed'>
+      <label class='dhkhlb' bindtap='dhkhlb'>到行客户列表</label>
+    </view>
+  </view>
+</view>
+<!-- 意向客户页面end -->
+
+<!-- 到行客户页面 -->
+<view hidden='{{hidn}}'>
+  <form bindsubmit="formSubmit">
+    <scroll-view scroll-x="true" class="scroll-menus header" bindscroll="bindscroll" scroll-left="{{scrollLeft}}">
+      <view style="display:inline-block;width:auto;">
+        <!-- 表头 -->
+        <view style="display:flex;">
+          <view class="scroll-menu">姓名</view>
+          <view class="scroll-menu">手机号</view>
+          <view class="scroll-menu">等级</view>
+          <view class="scroll-menu">F码</view>
+          <view class="scroll-menu">额度</view>
+          <view class="scroll-menu">分期数</view>
+          <view class="scroll-menu">状态</view>
+          <view class="scroll-menu">通过时间</view>
+          <view class="scroll-menu">失效时间</view>
+          <view class="scroll-menu">备注</view>
+        </view>
+        <!-- 表头end -->
+
+        <!-- table-body -->
+        <view wx:for="{{daohang}}" wx:key="{{item}}" style="display:flex; width: 100%;">
+          <input type='text' class="scroll-menu1" value='{{item.user_name}}' id="user_name-{{index}}" bindinput='value'></input>
+          <input type='number' class='scroll-menu1' value='{{item.user_phone}}' id="user_phone-{{index}}" bindinput='value' bindblur="phone"></input>
+          <input type='number' class='scroll-menu1' value='{{item.user_level}}' id="user_level-{{index}}" bindinput='value' />
+          <input type='text' class='scroll-menu1' value='{{item.f_number}}' id="f_number-{{index}}" bindinput='value' />
+          <input type='digit' class='scroll-menu1' value='{{item.money}}' id="money-{{index}}" bindinput='value'></input>
+          <picker-view class='scroll-menu1'>
+            <picker placeholder="请选择" range="{{limit}}" bindchange="changeLimit" id="limit_number-{{index}}">
+              <input class='scroll-menu1' disabled id="limit_number-{{index}}" value="{{item.limit_number}}"></input>
+            </picker>
+          </picker-view>
+          <picker-view class='scroll-menu1'>
+            <picker placeholder="请选择" range="{{state}}" bindchange="changeState" id="type_status-{{index}}">
+              <input class='scroll-menu1' disabled id="type_status-{{index}}" value="{{filters.change(item.type_status)}}"></input>
+            </picker>
+          </picker-view>
+          <picker-view class='scroll-menu1'>
+            <picker mode='date' bindchange="changeTime1" id="time1-{{index}}">
+              <input type="text" class='scroll-menu1' disabled value='{{item.cross_time}}' id="import_time-{{index}}" />
+            </picker>
+          </picker-view>
+          <picker-view class='scroll-menu1'>
+            <picker mode='date' bindchange="changeTime2" id="time2-{{index}}">
+              <input type="text" class='scroll-menu1' disabled value='{{item.limit_date}}' id="import_time-{{index}}" />
+            </picker>
+          </picker-view>
+          <input type='text' class='scroll-menu1' value='{{item.status_desc}}' id="status_desc-{{index}}" bindinput='value' />
+        </view>
+        <!-- table-body end -->
+      </view>
+    </scroll-view>
+
+
+    <view class='ts'>
+      <text>*</text>
+      <text>额度单位：万元</text>
+    </view>
+    <view class='ts'>
+      <text>*</text>
+      <text>三种状态可选择：通过、拒绝、审核中</text>
+    </view>
+    <view class='clear tjsc'>
+      <label class='right'>
+        <button bindtap='tianjia' hidden>添加</button>
+        <view class='tj'>添加</view>
+      </label>
+      <label class='right'>
+        <button bindtap='shanchu' hidden>删除</button>
+        <view class='sc'>删除</view>
+      </label>
+    </view>
+    <label>
+      <button form-type="submit" hidden>保存</button>
+      <view class='button'>保存到行客户</view>
+    </label>
+    <view id='fixe'>
+      <label class='dhkhlb' bindtap='fh'>意向客户列表</label>
+    </view>
+  </form>
+</view>
+<!-- 到行客户页面end -->

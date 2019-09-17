@@ -1,0 +1,30 @@
+//保留两位小数
+var change = function(num) {
+  var a;
+  if (num === 1) {
+    a = '通过'
+  } else if (num === 2) {
+    a = '拒绝'
+  } else {
+    a = '审批中'
+  }
+  return a;
+};
+
+var date = function(num) {
+    var time = getDate(num);
+    var a = time.getFullYear() + "-" + (parseInt(time.getMonth()) + 1) + "-" + time.getDate();
+    return a; 
+}
+
+var sub=function(str){
+  var str=str.substring(0,10);
+  // console.log(str)
+  return str;
+}
+
+module.exports = {
+  change: change,
+  date: date,
+  sub: sub
+}

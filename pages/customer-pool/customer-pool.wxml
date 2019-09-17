@@ -1,0 +1,29 @@
+<!--pages/customer-pool/customer-pool.wxml-->
+<wxs src="../../utils/type.wxs" module="filters"></wxs>
+<view class="cus-container">
+  <van-search value="{{ value }}" placeholder="请输入姓名/手机号" show-action bind:search="onSearch" bind:cancel="onCancel" />
+  <view class="table-header">
+    <view style="width:90rpx;">姓名</view>
+    <view style="width:80rpx;">等级</view>
+    <view style="width:140rpx;">申请额度</view>
+    <view>状态</view>
+    <view style="width:150rpx;">拓展日期</view>
+    <view>拓展人</view>
+    <view style="margin:0">拥有人</view>
+  </view>
+
+  <block wx:for="{{customer}}" wx:key="{{item.customer_id}}">
+    <navigator url='../cusDetail/cusDetail?customer_id="{{item.customer_id}}"'>
+      <view class="table-body">
+        <text style="width:90rpx;">{{item.customer_name}}</text>
+        <text style="width:80rpx;padding-rifht:4rpx;">{{item.customer_level}}</text>
+        <text>{{item.customer_limit}}万</text>
+        <text style="padding-left:10rpx;">{{filters.change(item.customer_status)}}</text>
+        <text style="width:150rpx">{{filters.sub(item.entry_date)}}</text>
+        <text style="width:100rpx;">{{item.entry_user_name}}</text>
+        <text style="width:100rpx;">{{item.belong_user_name}}</text>
+      </view>
+    </navigator>
+  </block>
+
+</view>

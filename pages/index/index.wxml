@@ -1,0 +1,62 @@
+<!--index.wxml-->
+<view class="index-container" bindtap="hideModal">
+
+  <view style="margin-bottom:20rpx;">
+    <i-tabs current="{{ currentTab }}" color="#9966ff" bindchange="handleChange">
+      <i-tab key="tab1" title="日榜"></i-tab>
+      <i-tab key="tab2" title="周榜"></i-tab>
+      <i-tab key="tab3" title="月榜"></i-tab>
+      <i-tab key="tab4" title="年榜"></i-tab>
+    </i-tabs>
+  </view>
+
+  <view style="display:flex">
+    <view class="fixed">姓名</view>
+    <scroll-view  scroll-x="true" class="scroll-menus header" bindscroll="scroll" scroll-left="{{scrollLeft}}">
+      <view class="scroll-menu {{accord_to===0?'tableActive':''}}" bindtap="phoneNum">电话数</view>
+      <view class="scroll-menu {{accord_to===6?'tableActive':''}}" bindtap="intentionNum">意向数</view>
+      <view class="scroll-menu {{accord_to===7?'tableActive':''}}" bindtap="intentionMoney">意向额</view>
+      <view class="scroll-menu {{accord_to===8?'tableActive':''}}" bindtap="rate1">转化率</view>
+      <view class="scroll-menu {{accord_to===1?'tableActive':''}}" bindtap="bankNum">到行数</view>
+      <view class="scroll-menu {{accord_to===2?'tableActive':''}}" bindtap="bankMoney">到行额</view>
+      <view class="scroll-menu {{accord_to===3?'tableActive':''}}" bindtap="passNum">通过数</view>
+      <view class="scroll-menu {{accord_to===4?'tableActive':''}}" bindtap="passMoney">通过额</view>
+      <view class="scroll-menu {{accord_to===5?'tableActive':''}}" bindtap="rate2">转化率</view>
+    </scroll-view>
+  </view>
+  <block wx:for='{{ribao[time]}}' wx:key='{{item}}'>
+    <view style="display:flex">
+      <view class="fixed" style="background-color:#f2f2f2">{{item.user_name}}</view>
+      <scroll-view scroll-x="true"  class="scroll-menus" bindscroll="scroll" scroll-left="{{scrollLeft}}">
+        <text class='scroll-menu'>{{item.all_number}}</text>
+        <text class='scroll-menu'>{{item.intention_number}}</text>
+        <text class='scroll-menu'>{{item.intention_money}}</text>
+        <text class='scroll-menu'>{{item.intention_conversion}}%</text>
+        <text class='scroll-menu'>{{item.arrival_number}}</text>
+        <text class='scroll-menu'>{{item.arrival_money}}</text>
+        <text class='scroll-menu'>{{item.deal_number}}</text>
+        <text class='scroll-menu'>{{item.deal_money}}</text>
+        <text class='scroll-menu'>{{item.percent_conversion}}%</text>
+      </scroll-view>
+    </view>
+  </block>
+
+
+  <!-- 底部导航栏 -->
+  <view class="modal1" wx:if="{{modal1}}">
+    <view class="list" bindtap="navigateDaily">日报</view>
+    <view class="list" bindtap="navigateCase">案例</view>
+  </view>
+  <view class="modal2" wx:if="{{modal2}}">
+    <view class="list" bindtap="navigateWarning">支用预警</view>
+    <view class="list" bindtap="navigateReturn">支用回访</view>
+    <view class="list" bindtap="navigateCustomerpool">客户池</view>
+  </view>
+  <view class="tabbar-container">
+    <view class="tab {{current===1 ? 'active':''}}" bindtap="tap1">排行榜</view>
+    <view class="tab {{current===2 ? 'active':''}}" catchtap="tap2">工作</view>
+    <view class="tab {{current===3 ? 'active':''}}" catchtap="tap3">客户舆情</view>
+    <view class="tab {{current===4 ? 'active':''}}" bindtap="tap4">我的</view>
+  </view>
+
+</view>

@@ -1,0 +1,47 @@
+<!--pages/perDetail/perDetail.wxml-->
+<view class="return-container">
+
+  <view style="display:flex">
+    <view class="fixed">姓名</view>
+    <scroll-view style="width:650rpx;" scroll-x="true" class="scroll-menus header" bindscroll="scroll" scroll-left="{{scrollLeft}}">
+      <!-- <view class="scroll-menu">姓名</view> -->
+      <view class="scroll-menu">业务类型</view>
+      <view class="scroll-menu">申请额</view>
+      <view class="scroll-menu">累计支用</view>
+      <view class="scroll-menu">当月支用</view>
+      <view class="scroll-menu">回访支用</view>
+      <view class="scroll-menu">提成系数</view>
+      <view class="scroll-menu">奖金</view>
+    </scroll-view>
+  </view>
+
+  <view style="display:flex">
+    <view class="fixed" style="background-color:#f2f2f2">张三三</view>
+    <scroll-view style="width:650rpx;" scroll-x="true" class="scroll-menus" bindscroll="scroll" scroll-left="{{scrollLeft}}">
+      <view class="scroll-menu">家装分期</view>
+      <view class="scroll-menu">999.99</view>
+      <view class="scroll-menu">999.99</view>
+      <view class="scroll-menu">999.99</view>
+      <view class="scroll-menu">999.99</view>
+      <view class="scroll-menu">4%</view>
+      <view class="scroll-menu">999.99</view>
+    </scroll-view>
+  </view>
+
+  <!-- <block wx:for="{{performance}}" wx:key="{{item.id}}">
+    <view style="display:flex">
+      <view class="fixed" style="background-color:#f2f2f2">{{item.name}}</view>
+      <scroll-view style="width:650rpx;" scroll-x="true" class="scroll-menus" bindscroll="scroll" scroll-left="{{scrollLeft}}">
+        <view class="scroll-menu">{{item.id}}</view>
+        <view class="scroll-menu">{{item.id}}</view>
+        <view class="scroll-menu">{{item.id}}</view>
+        <view class="scroll-menu">{{item.id}}</view>
+        <view class="scroll-menu">{{item.id}}</view>
+        <view class="scroll-menu">{{item.id}}</view>
+        <view class="scroll-menu">{{item.id}}</view>
+        <view class="scroll-menu">{{item.id}}</view>
+      </scroll-view>
+    </view>
+  </block> -->
+
+</view>

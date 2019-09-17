@@ -1,0 +1,93 @@
+/* pages/writeDaily/writeDaily.wxss */
+
+.write-container {
+  display: flex;
+  flex-direction: column;
+  height: 1204rpx;
+  background-color: #f2f2f2;
+}
+.image-container{
+  width:70rpx;
+  height:70rpx;
+  line-height:70rpx;
+}
+image {
+  width: 20rpx;
+  height: 20rpx;
+  vertical-align: middle;
+}
+
+.button {
+  width: 320rpx;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 60rpx;
+  background-color: #96f;
+  color: #fff;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.form {
+  margin-top: 20rpx;
+}
+
+/* 每一行的样式 */
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2rpx solid #ccc;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding-left: 20rpx;
+  background-color: #fff;
+}
+
+.item-bank {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2rpx solid #ccc;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding-left: 20rpx;
+}
+
+.tab {
+  padding-left: 40rpx;
+}
+
+.item .right{
+  /* font-size: 34rpx; */
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: right;
+  padding-right: 30rpx;
+}
+
+/* 到行客户和意向客户里的子项 */
+
+.children {
+  width:100%;
+  position:relative;
+  display:flex;
+  /* justify-content: space-around; */
+  background-color: #fff;
+  height:50rpx;
+  line-height:50rpx;
+}
+.children .right{
+  text-align:right;
+  color:#bbbbbb;
+  position:absolute;
+  top:6rpx;
+  right:30rpx;
+}
+/* 备注 */
+textarea{
+  width:550rpx;
+  min-height:150rpx;
+  padding-top:20rpx;
+}

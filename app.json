@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/customer-pool/customer-pool",
+    
+    
+    "pages/login/login",
+   
+    "pages/daily/daily",
+    "pages/dailyDetail/dailyDetail",
+     
+    "pages/bankCustom/bankCustom", 
+    
+    "pages/writeDaily/writeDaily",
+    "pages/myPerformance/myPerformance",
+     
+    "pages/my/my",
+    "pages/perDetail/perDetail",
+    "pages/editpassword/editpassword",   
+    
+    "pages/intentionCustom/intentionCustom",
+    "pages/case/case",
+    "pages/caseDetail/caseDetail",
+    "pages/writeCase/writeCase",
+    "pages/warning/warning",
+    "pages/warnDetail/warnDetail",
+    "pages/return/return",
+    "pages/returnDetail/returnDetail",
+    
+    "pages/cusDetail/cusDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#9966ff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "sitemapLocation": "sitemap.json"
+}

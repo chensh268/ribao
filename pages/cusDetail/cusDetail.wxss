@@ -1,0 +1,98 @@
+/* pages/cusDetail/cusDetail.wxss */
+.cus-container{
+  height:1334rpx;
+  background-color: #f2f2f2;
+}
+.customer{
+  /* margin-top:50rpx; */
+  width:100%;
+  height:84rpx;
+  padding-left:10rpx;
+  line-height:84rpx;
+  border-bottom:2rpx solid #ccc;
+  background-color: #fff;
+}
+.customer-body{
+  /* /* height:300rpx; */
+  background-color: #fff; 
+}
+.customer-body .item{
+  height:75rpx;
+  border-bottom:2rpx solid #ccc;
+  box-sizing: border-box;
+  line-height:75rpx;
+}
+.customer-body .item text{
+  display: inline-block;
+  width:25%;
+  font-size:30rpx;
+}
+.record-body{
+ 
+  background-color: #fff;
+}
+.record-body .item{
+  padding-left:40rpx;
+  height:75rpx;
+  border-bottom:2rpx solid #ccc;
+  box-sizing: border-box;
+  line-height:75rpx;
+}
+.bgcolor{
+  /* background-color: #f2f2f2; */
+}
+.record-body .item text{
+  display: inline-block;
+  width:33%;
+  font-size:30rpx;
+}
+/* 滑动 */
+
+.scroll-menus {
+  display: flex;
+  /* width: 650rpx; */
+  width: 100%;
+  height: auto;
+  line-height: 60rpx;
+  white-space: nowrap;
+  border-bottom: 1px solid #eee;
+}
+
+.scroll-menu {
+  /* display: flex; */
+  display: inline-block;
+  width: 160rpx;
+  height: 60rpx;
+  text-align: center;
+  border-right: 2rpx solid #eee;
+  box-sizing: border-box;
+}
+
+.scroll-menu1 {
+  /* display: flex; */
+  display: inline-block;
+  width: 100%;
+  height: 60rpx;
+  font-size:28rpx;
+  text-align: center;
+  border-right: 2rpx solid #eee;
+  box-sizing: border-box;
+}
+
+.fixed {
+  /* display: inline-block; */
+  font-size: 30rpx;
+  padding-top: 10rpx;
+  width: 120rpx;
+  height: 50rpx;
+  text-align: center;
+  border-right: 2rpx solid #eee;
+  background-color: #fff;
+}
+
+.header {
+  font-size: 30rpx;
+  background-color: #fff;
+}
+
+/* 滑动end */

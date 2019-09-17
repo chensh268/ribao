@@ -1,0 +1,98 @@
+<!--pages/writeDaily/writeDaily.wxml-->
+<view class="write-container">
+  <form bindsubmit="formSubmit" class="form">
+    <view class='item'>
+      <text class='left'>填报时间</text>
+      <picker-view >
+        <picker mode="date" bindchange="bindDateChange">
+          <input class='right' placeholder="请选择时间" disabled placeholder-style="color:#bbbbbb;" value="{{date}}" name="time"></input>
+        </picker>
+      </picker-view>
+    </view>
+    <view class='item'>
+      <text class='left'>银行类别</text>
+      <picker-view >
+        <picker mode='selector' bindchange="bankTypeChange" range='{{bankType}}'>
+          <input type="text" class='right' disabled placeholder='请选择银行' placeholder-style="color:#bbbbbb;" value='{{bankType[index1]}}' name="bankType" />
+        </picker>
+      </picker-view>
+    </view>
+    <view class="item">
+      <text class="left">所属支行</text>
+      <picker-view >
+        <picker mode='selector' bindchange="subBankChange" range='{{subBank}}'>
+          <input type="text" class='right' disabled placeholder='请选择支行' placeholder-style="color:#bbbbbb;" value='{{subBank[index2]}}' name="subBank" />
+        </picker>
+      </picker-view>
+    </view>
+    <view class='item'>
+      <text class='left'>业务类型</text>
+      <picker-view >
+        <picker mode='selector' bindchange="businessTypeChange" range='{{businessType}}'>
+          <input type="text" class='right' disabled placeholder='请选择业务' placeholder-style="color:#bbbbbb;" value='{{businessType[index3]}}' name="businessType" />
+        </picker>
+      </picker-view>
+    </view>
+    <view class='item'>
+      <text class='left'>电话数量</text>
+      <input type="text" placeholder='请填写电话数量' placeholder-style="color:#bbbbbb;" value='' name="phoneNum" class='right' />
+    </view>
+
+    <!-- 到行客户： -->
+    <view class='bank'>
+      <label class="item-bank" bindtap="navigateBank">
+        <text class='left'>到行客户</text>
+        <view class="image-container">
+          <image  src='../../images/20.png' mode='widthFix' class='right you' />
+        </view>
+      </label>
+      <view class='children'>
+        <text class='left tab'>到行数量</text>
+        <input type="text" disabled value='' name="bankNum" class='right' value='{{dhsl}}' />
+      </view>
+      <view class='children'>
+        <text class='left tab'>到行额度</text>
+        <input type="text" disabled value='' name="bankMoney" class='right' value='{{dhed}}' />
+      </view>
+      <view class='children'>
+        <text class='left tab' >审批通过</text>
+        <input type="text" disabled value='' name="passNum" class='right' value='{{sptg}}' />
+      </view>
+      <view class='children'>
+        <text class='left tab'>审批总额</text>
+        <input type="text" disabled value='' name="passMoney" class='right' value='{{spze}}' />
+      </view>
+      <view class='children'>
+        <text class='left tab'>转化率</text>
+        <input type="text" disabled value='' name="rate" class='right' value='{{zhl}}' />
+      </view>
+    </view>
+    <!-- 意向客户 -->
+    <view  class='custom'>
+      <label class="item-bank" bindtap="navigateIntention">
+        <text class='left'>意向客户</text>
+        <view class="image-container">
+          <image  src='../../images/20.png' mode='widthFix' class='right you' />
+        </view>
+      </label>
+      <view class='children'>
+        <text class='left tab'>客户数量</text>
+        <input type="text" disabled value='' name="customNum" class='right' value='{{yxkh}}' />
+      </view>
+      <view class='children' >
+        <text class='left tab'>意向总额</text>
+        <input type="text" disabled value='' name="intentionMoney" class='right' value='{{yxze}}' />
+      </view>
+    </view>
+    <!-- 备注 -->
+    <view class='item' style="height:150rpx;border-top:2rpx solid #ccc">
+      <text class='left'>备注</text>
+      <textarea class='right' name="work_desc" placeholder='请填写备注' placeholder-style="color:#bbbbbb;"></textarea>
+    </view>
+    <!-- 提交 -->
+    <label style="display:flex;justify-content:center;align-items:center;margin-top:40rpx;">
+      <button form-type="submit" hidden>提交</button>
+      <view class='button'>提交</view>
+    </label>
+  </form>
+</view>

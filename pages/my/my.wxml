@@ -1,0 +1,46 @@
+<!--pages/my/my.wxml-->
+<view bindtap="hideModal" class="my-container">
+  <view class="userInfo">
+    <view class="userInfo1">
+      <image style="width:150rpx;height:270rpx" wx:if="{{userInfo==null}}" src="../../images/29.png" bindtap="navigateLogin"></image>
+      <text wx:if="{{userInfo==null}}" bindtap="navigateLogin">请点击登录</text>
+      
+      <image src="{{userInfo.head_img}}"></image>
+      <text>{{userInfo.real_name}}</text>
+      <view wx:if="{{userInfo.user_account!==null}}">{{userInfo.user_account}}</view>
+      <view wx:if="{{userInfo.user_account==null}}">未设置</view>
+    </view>
+    <view class="userInfo2">
+      <!-- <view>手机号</view> -->
+      <view>累计提成</view>
+      <view>损失额</view>
+      <view>未支用额</view>
+    </view>
+    <view class="userInfo3">
+      <view>{{userInfo.money1}}</view>
+      <view>{{userInfo.money2}}</view>
+      <view>{{userInfo.money3}}</view>
+    </view>
+  </view>
+  <i-cell-group>
+    <i-cell title="修改信息" is-link url="/pages/editpassword/editpassword"></i-cell>
+    <i-cell title="我的业绩" is-link url="/pages/myPerformance/myPerformance"></i-cell>
+  </i-cell-group>
+
+  <!-- 底部导航栏 -->
+  <view class="modal1" wx:if="{{modal1}}">
+    <view class="list" bindtap="navigateDaily">日报</view>
+    <view class="list" bindtap="navigateCase">案例</view>
+  </view>
+  <view class="modal2" wx:if="{{modal2}}">
+    <view class="list" bindtap="navigateWarning">支用预警</view>
+    <view class="list" bindtap="navigateReturn">支用回访</view>
+    <view class="list" bindtap="navigateCustomerpool">客户池</view>
+  </view>
+  <view class="tabbar-container">
+    <view class="tab {{current===1 ? 'active':''}}" bindtap="tap1">排行榜</view>
+    <view class="tab {{current===2 ? 'active':''}}" catchtap="tap2">工作</view>
+    <view class="tab {{current===3 ? 'active':''}}" catchtap="tap3">客户舆情</view>
+    <view class="tab {{current===4 ? 'active':''}}" bindtap="tap4">我的</view>
+  </view>
+</view>

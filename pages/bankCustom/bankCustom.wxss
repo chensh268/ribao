@@ -1,0 +1,289 @@
+/* pages/bankCustom/bankCustom.wxss */
+
+/* pages/daohang/daohang.wxss */
+
+page {
+  padding-bottom: 200rpx;
+  overflow: auto;
+  background: #f9f9f9;
+}
+
+input {
+  border: 1rpx solid #dcdcdc;
+  /* margin: 0 -1rpx; */
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+
+/* 滑动 */
+
+.scroll-menus {
+  display: flex;
+  /* width: 650rpx; */
+  width: 100%;
+  height: auto;
+  line-height: 60rpx;
+  white-space: nowrap;
+  border-bottom: 1px solid #eee;
+}
+
+.scroll-menu {
+  /* display: flex; */
+  display: inline-block;
+  width: 160rpx;
+  height: 60rpx;
+  text-align: center;
+  border-right: 2rpx solid #eee;
+  box-sizing: border-box;
+}
+
+.scroll-menu1 {
+  /* display: flex; */
+  display: inline-block;
+  width: 100%;
+  height: 60rpx;
+  font-size:28rpx;
+  text-align: center;
+  border-right: 2rpx solid #eee;
+  box-sizing: border-box;
+}
+
+.fixed {
+  /* display: inline-block; */
+  font-size: 30rpx;
+  padding-top: 10rpx;
+  width: 120rpx;
+  height: 50rpx;
+  text-align: center;
+  border-right: 2rpx solid #eee;
+  background-color: #fff;
+}
+
+.header {
+  font-size: 30rpx;
+  background-color: #fff;
+}
+
+/* 滑动end */
+
+.button {
+  display: block;
+  margin: auto;
+  margin-top: 60rpx;
+  width: 300rpx;
+  border-radius: 60rpx;
+  padding: 15rpx;
+  background: #96f;
+  color: #fff;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.tjsc {
+  /* padding: 20rpx 30rpx; */
+  display: flex;
+  float: right;
+}
+
+.tj, .sc {
+  font-size: 34rpx;
+  margin-left: 20rpx;
+  color: #333;
+}
+
+/* 提示字 */
+
+.ts {
+  padding: 0 20rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.ts>text:first-child {
+  color: red;
+  margin-right: 10rpx;
+  font-size: 32rpx;
+  top: 5rpx;
+  position: relative;
+}
+
+.ss {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #3670db;
+  border-bottom: 1rpx solid #dcdcdc;
+  box-shadow: 0 0 10rpx 0 #dcdcdc;
+  height: 100rpx;
+}
+
+/* 意向客户列表的search 容器 */
+
+.ss-input {
+  width: 550rpx;
+  display: block;
+  margin: 0rpx auto;
+  margin-top: 10rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #333;
+  font-size: 34rpx;
+  border-radius: 35rpx;
+  padding: 0 100rpx 0 30rpx;
+  background: #fff;
+}
+
+/* 意向客户列表 */
+
+.yxlb {
+  padding: 0 30rpx;
+  color: #333;
+  font-size: 30rpx;
+  padding-top: 100rpx;
+  padding-bottom: 200rpx;
+}
+
+.yxlb>text {
+  color: #96f;
+  display: block;
+  text-align: center;
+  font-size: 36rpx;
+  padding: 10rpx;
+  font-weight: 600;
+}
+
+
+
+.yxlb>view {
+  /* display: inline-block; */
+  margin: 10rpx 0;
+}
+
+.tt {
+  color: #3670db;
+}
+
+/* 意向客户列表end */
+
+/* 到行客户详情 */
+
+.kehu {
+  margin: 20rpx 0;
+  padding: 10rpx 0;
+  background: #fff;
+  box-shadow: 0 0 20rpx 0 #dcdcdc;
+  /* padding: 20rpx; */
+}
+
+.table-head {
+  text-align: center;
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  justify-content: space-around;
+}
+
+.table-head text {
+  margin-right: 10rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.table-body {
+  display: flex;
+  /* justify-content: space-around; */
+  margin-bottom: 30rpx;
+}
+
+.input {
+  margin-right: 10rpx;
+  width: 100rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 24rpx;
+  border-radius: 6rpx;
+  border: 2rpx solid #ccc;
+  box-sizing: border-box;
+}
+
+/* 到行客户详情end */
+
+.dhkhlb {
+  display: block;
+  margin: auto;
+  width: 300rpx;
+  border-radius: 60rpx;
+  padding: 15rpx;
+  background: #96f;
+  color: #fff;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+#fixed, #fixe, #fix {
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+  left: 0;
+  background: #fff;
+  margin: 0;
+  height: 100rpx;
+  padding-top: 30rpx;
+}
+
+#fix {
+  height: 200rpx;
+}
+
+#fix>label:first-child {
+  margin-bottom: 37rpx;
+}
+
+.dhtj {
+  display: inline-block;
+  width: 120rpx;
+  background: #dcdcdc;
+  color: #666;
+  border-radius: 50rpx;
+}
+
+.dhtj-true {
+  display: inline-block;
+  width: 120rpx;
+  border-radius: 50rpx;
+  background: #3670db;
+  color: #fff;
+}
+
+
+.table-header{
+width:100%;
+background-color: #fff;
+}
+
+.table-header text{
+  /* display: flex;
+  justify-content: space-around; */
+   display: inline-block;
+  width: 170rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align:center;
+  font-size: 28rpx;
+  margin:0;
+}
+.table-body{
+  border-bottom:2rpx solid #ccc;
+}
+
+.table-body text {
+  display: inline-block;
+  width: 170rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align:center;
+  font-size: 28rpx;
+  margin:0;
+}

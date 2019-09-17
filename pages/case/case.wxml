@@ -1,0 +1,38 @@
+<!--pages/case/case.wxml-->
+<view>
+  <van-search value="{{ value }}" placeholder="请输入姓名/案例标题" show-action bind:search="onSearch" bind:cancel="onCancel" />
+  <view class="header">
+    <text style="font-size:28rpx;">案例列表</text>
+    <i-icon size="26" type="brush" style="padding-right:20rpx" bindtap="writeCase" />
+  </view>
+  <!-- 列表 -->
+  <!-- <view class="case">
+    <image src="../../images/login-wx.png"></image>
+    <view style="width:620rpx; margin-left:20rpx;">
+      <view>客户为告知自己的征信有预约悲剧</view>
+      <view class="small">
+        <text style="margin-right:100rpx;">撰写人:刘丰硕</text>
+        <text>2019-08-09 10:31:09</text>
+      </view>
+      <view class="text">同安路第三支行的客户，系统授权9万元的额度，导航办理时，机器显示征信近半年的同安路第三支行的客户，系统授权9万元的额度，导航办理时，机器显示征信近半年的同安路第三支行的客户，系统授权9万元的额度，导航办理时，机器显示征信近半年的</view>
+    </view>
+  </view> -->
+  <!-- 列表end -->
+
+  <!-- 列表 -->
+  <block wx:for="{{case}}" wx:key="{{item.case_id}}">
+    <view class="case">
+      <image  src="../../images/login-wx.png"></image>
+      <view style="width:620rpx; margin-left:20rpx;">
+        <view>{{item.title}}</view>
+        <view class="small">
+          <text style="margin-right:100rpx;">撰写人:{{item.user_name}}</text>
+          <text>{{item.create_time}}</text>
+        </view>
+        <view class="text">{{item.content}}</view>
+      </view>
+    </view>
+  </block>
+  <!-- 列表end -->
+
+</view>

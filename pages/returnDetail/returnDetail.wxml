@@ -1,0 +1,36 @@
+<!--pages/returnDetail/returnDetail.wxml-->
+<view class="cus-container">
+  <view class="customer" style="border-bottom:2rpx solid #ccc;">回访客户详情</view>
+  <view class="customer-body">
+    <view class="item">
+      <text style="padding-left:10rpx;box-sizing:border-box">姓名</text>
+      <text style="color:#999">{{return.customer_name}}</text>
+      <text style="width:24%">申请额度</text>
+      <text style="color:#999;">{{return.customer_limit}}</text>
+    </view>
+    <view class="item">
+      <text style="padding-left:10rpx;box-sizing:border-box">支用额</text>
+      <text style="color:#999">{{return.customer_use}}</text>
+      <text>剩余额度</text>
+      <text style="color:#999">{{return.customer_surplus}}</text>
+    </view>
+    <view class="item">
+      <text style="padding-left:10rpx;box-sizing:border-box">申请日期</text>
+      <text style="color:#999">{{return.cross_date}}</text>
+      <text>失效日期</text>
+      <text style="color:#999">{{return.limit_date}}</text>
+    </view>
+    <view class="item">
+      <text style="padding-left:10rpx;box-sizing:border-box">拥有人</text>
+      <text style="color:#999">{{return.belong_name}}</text>
+      <text>拓展人</text>
+      <text style="color:#999">{{return.entry_name}}</text>
+    </view>
+    <view class="item">
+      <text style="padding-left:10rpx;box-sizing:border-box">回访日期</text>
+      <text style="color:#999">{{return.back_date}}</text>
+      <text>回访人</text>
+      <text style="color:#999">{{return.back_name}}</text>
+    </view>
+  </view>
+</view>

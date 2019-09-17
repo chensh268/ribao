@@ -1,0 +1,21 @@
+<!--pages/warning/warning.wxml-->
+<wxs src="../../utils/type.wxs" module="filters"></wxs>
+<view class="warn-container">
+  <van-search value="{{ value }}" placeholder="请输入姓名/手机号" show-action bind:search="onSearch" bind:cancel="onCancel" />
+  <view class="table-header">
+    <view style="width:120rpx">姓名</view>
+    <view >电话</view>
+    <view >提醒时间</view>
+    <view >失效时间</view>
+  </view>
+  <block wx:for="{{warn}}" wx:key="{{item.id}}">
+    <navigator url='../warnDetail/warnDetail?remind_id="{{item.remind_id}}"'>
+      <view class="table-body">
+        <text style="width:120rpx">{{item.remind_customer_name}}</text>
+        <text >{{item.remind_customer_phone}}</text>
+        <text >{{filters.sub(item.remind_time)}}</text>
+        <text >{{filters.sub(item.limit_date)}}</text>
+      </view>
+    </navigator>
+  </block>
+</view>

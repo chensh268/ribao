@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "支用回访",
+  "usingComponents": {
+    "van-search": "../../distVant/search/index"
+  }
+}

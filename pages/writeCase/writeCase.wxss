@@ -1,0 +1,38 @@
+/* pages/writeCase/writeCase.wxss */
+.write-container{
+  padding-top:20rpx;
+  background-color: #f2f2f2;
+  height:1330rpx;
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2rpx solid #ccc;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 20rpx;
+  background-color: #fff;
+  font-size:36rpx;
+}
+.item .right{
+  font-size: 34rpx;
+  height: 100rpx;
+  line-height: 50rpx;
+  text-align: right;
+  padding-right: 30rpx;
+}
+.button {
+  width: 320rpx;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 60rpx;
+  background-color: #96f;
+  color: #fff;
+}
+/* 备注 */
+textarea{
+  width:550rpx;
+  min-height:150rpx;
+  padding-top:20rpx;
+}

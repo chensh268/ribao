@@ -1,0 +1,29 @@
+<!--pages/login/login.wxml-->
+<view class="login-container">
+  <image class="topImage" src="../../images/login3.jpg"></image>
+  <!-- <form bindsubmit="formSubmit">
+    <view class="account">
+      <view>账号</view>
+      <input name="account" placeholder="请输入账号" placeholder-class="pla"></input>
+    </view>
+    <view class="account">
+      <view>密码</view>
+      <input name="password" placeholder="请输入密码" placeholder-class="pla"></input>
+    </view>
+    <label>
+      <button form-type="submit" hidden>登录</button>
+      <view class='button'>登录</view>
+    </label>
+  </form> -->
+  <!-- <image style="width:120rpx;height:120rpx;margin-bottom:70rpx;" src='../../images/login-wx.png' mode='widthFix' />
+  <view class='login'>
+    <label>
+      <label>
+        <text>请点击授权登录</text>
+        <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo" hidden>微信授权登录</button>
+      </label>
+    </label>
+  </view> -->
+  <button class="button" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">微信登录</button>
+  <view class="text" bindtap="navigateToindex">暂不登录，随便看看</view>
+</view>

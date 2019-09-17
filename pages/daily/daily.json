@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-search": "../../distVant/search/index",
+    "i-icon": "../../dist/icon/index",
+    "i-page": "../../dist/page/index"
+  },
+  "navigationBarTitleText": "日报"
+}

@@ -1,0 +1,87 @@
+<!--pages/cusDetail/cusDetail.wxml-->
+<wxs src="../../utils/type.wxs" module="filters"></wxs>
+<view class="cus-container">
+  <view class="customer" style="border-bottom:2rpx solid #ccc;">客户详情</view>
+  <view class="customer-body">
+    <view class="item">
+      <text style="padding-left:10rpx;box-sizing:border-box">姓名</text>
+      <text style="color:#999">{{customer.customer_name}}</text>
+      <text style="width:24%">手机号</text>
+      <text style="color:#999;width:26%">{{customer.customer_phone}}</text>
+    </view>
+    <view class="item">
+      <text style="padding-left:10rpx;box-sizing:border-box">等级</text>
+      <text style="color:#999">{{customer.customer_level}}</text>
+      <text>状态</text>
+      <text style="color:#999">{{filters.change(customer.customer_status)}}</text>
+    </view>
+    <view class="item">
+      <text style="padding-left:10rpx;box-sizing:border-box">申请额度</text>
+      <text style="color:#999">{{customer.customer_limit}}万</text>
+      <text>支用额</text>
+      <text style="color:#999">要废弃了吗</text>
+    </view>
+    <view class="item">
+      <text style="padding-left:10rpx;box-sizing:border-box">拓展日期</text>
+      <text style="color:#999">{{filters.sub(customer.entry_date)}}</text>
+      <text>拥有人</text>
+      <text style="color:#999">{{customer.belong_user_name}}</text>
+    </view>
+  </view>
+  <view class="customer" style="margin-top:50rpx;">回访记录
+    <text wx:if="{{add}}" style="float:right;margin-right:30rpx;" bindtap="add">添加</text>
+    <text wx:if="{{!add}}" style="float:right;margin-right:30rpx;" bindtap="save">保存</text>
+  </view>
+  <!-- <view class="record-body">
+    <view class="item bgcolor">
+      <text>回访日期</text>
+      <text>回访人</text>
+      <text>回访反馈</text>
+    </view>
+
+    <view class="item">
+      <text>2019-12-11</text>
+      <text>张三三</text>
+      <text>欢欢哈哈哈哈哈</text>
+    </view>
+
+    <!-- <block wx:for="{{record}}" wx:key="{{item.id}}">
+      <view class="item">
+        <text>{{item.aa}}</text>
+        <text>{{item.aa}}</text>
+        <text style="overflow:auto">{{item.aa}}</text>
+      </view>
+    </block> -->
+
+  <!-- </view> -->
+
+
+  <scroll-view scroll-x="true" class="scroll-menus header" bindscroll="bindscroll" scroll-left="{{scrollLeft}}">
+    <view style="display:inline-block;width:auto;">
+      <!-- 表头 -->
+      <view style="display:flex;border-bottom:2rpx solid #ccc;">
+        <view class="scroll-menu">回访日期</view>
+        <view class="scroll-menu">回访人</view>
+        <view class="scroll-menu">使用额度</view>
+        <view class="scroll-menu">剩余额度</view>
+        <view class="scroll-menu">备注</view>
+      </view>
+      <!-- 表头end -->
+
+      <!-- table-body -->
+      <view wx:for="{{record}}" wx:key="{{item}}" class=' ' style="display:flex; width: 100%;border-bottom:2rpx solid #ccc;">
+        <picker-view class='scroll-menu1'>
+          <picker mode='date' bindchange="changeTime1" id="time1-{{index}}">
+            <input type="text" class='scroll-menu1' disabled value='{{item.back_date}}' id="back_date-{{index}}" />
+          </picker>
+        </picker-view>
+        <input type='number' class='scroll-menu1' value='{{item.sales_name}}' id="sales_name-{{index}}" bindinput='value'></input>
+        <input type='number' class='scroll-menu1' value='{{item.customer_use}}' id="customer_use-{{index}}" bindinput='value' />
+        <input type='text' disabled class='scroll-menu1' value='{{item.customer_surplus}}' id="customer_surplus-{{index}}" bindinput='value' />
+        <input type='text' class='scroll-menu1' value='{{item.back_desc}}' id="back_desc-{{index}}" bindinput='value' />
+      </view>
+      <!-- table-body end -->
+    </view>
+  </scroll-view>
+
+</view>
